@@ -902,7 +902,7 @@ while bossHP > 0 or teamHP > 0:
     print(bName,": ",bHP, "HP, ",bMP, "MP,")
     print(cName,": ",cHP, "HP, ",cMP, "MP,")
     print(dName,": ",dHP, "HP, ",dMP, "MP.\n")
-    print("******"")
+    print("******")
     esuna = 2
     if enemySleep == 1:
         print("The boss is asleep!")
@@ -924,5 +924,9 @@ while bossHP > 0 or teamHP > 0:
     boss(z)
     print("******")    
     
-          teamHP = aHP + bHP + cHP + dHP
-Print("Game Over.")
+    teamHP = aHP + bHP + cHP + dHP
+
+if teamHP <= 0:
+    print("Game over. You Lose.")
+elif bossHP <= 0:
+    print("Game over. You Win!")
