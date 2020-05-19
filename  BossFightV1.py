@@ -653,6 +653,7 @@ def boss(z):
     global target
     global bossSTR
     global heartlessAmmo
+    global bossHP
     if z == 1:
         enemyPoison = 0
         print("The boss casted Antidote! He's no longer poisoned.")
@@ -740,14 +741,15 @@ elif dTitle == 3:
     dmenu = wmMenu
 elif dTitle == 4:
     dmenu = bmMenu
+    
+print("\nBoss HP: ",bossHP,"\n")
+print(aName,": ",aHP, "HP, ",aMP, "MP")
+print(bName,": ",bHP, "HP, ",bMP, "MP,")
+print(cName,": ",cHP, "HP, ",cMP, "MP,")
+print(dName,": ",dHP, "HP, ",dMP, "MP.\n")
 
 #Actual fight code
-while bossHP > 0 or teamHP > 0:
-    print("\nBoss HP: ",bossHP,"\n")
-    print(aName,": ",aHP, "HP, ",aMP, "MP")
-    print(bName,": ",bHP, "HP, ",bMP, "MP,")
-    print(cName,": ",cHP, "HP, ",cMP, "MP,")
-    print(dName,": ",dHP, "HP, ",dMP, "MP.\n")
+while bossHP > 0 and teamHP > 0:
 
     if aHP>0:
         active(1)
@@ -777,15 +779,23 @@ while bossHP > 0 or teamHP > 0:
             healer(a)
         elif aTitle == 4:
             wizard(a)
+        if aHP<0:
+            aHP = 0
+        if bHP<0:
+            bHP = 0
+        if cHP<0:
+            cHP = 0
+        if dHP<0:
+            dHP = 0
+        teamHP = aHP + bHP + cHP + dHP
+        print("\nBoss HP: ",bossHP,"\n")
+        print(aName,": ",aHP, "HP, ",aMP, "MP")
+        print(bName,": ",bHP, "HP, ",bMP, "MP,")
+        print(cName,": ",cHP, "HP, ",cMP, "MP,")
+        print(dName,": ",dHP, "HP, ",dMP, "MP.\n") 
         inactive(1)
 
     
-    teamHP = aHP + bHP + cHP + dHP
-    print("\nBoss HP: ",bossHP,"\n")
-    print(aName,": ",aHP, "HP, ",aMP, "MP")
-    print(bName,": ",bHP, "HP, ",bMP, "MP,")
-    print(cName,": ",cHP, "HP, ",cMP, "MP,")
-    print(dName,": ",dHP, "HP, ",dMP, "MP.\n") 
 
     if bHP>0:
         active(2)
@@ -815,16 +825,23 @@ while bossHP > 0 or teamHP > 0:
             healer(a)
         elif bTitle == 4:
             wizard(a)  
+        if aHP<0:
+            aHP = 0
+        if bHP<0:
+            bHP = 0
+        if cHP<0:
+            cHP = 0
+        if dHP<0:
+            dHP = 0
+        teamHP = aHP + bHP + cHP + dHP
+        print("\nBoss HP: ",bossHP,"\n")
+        print(aName,": ",aHP, "HP, ",aMP, "MP")
+        print(bName,": ",bHP, "HP, ",bMP, "MP,")
+        print(cName,": ",cHP, "HP, ",cMP, "MP,")
+        print(dName,": ",dHP, "HP, ",dMP, "MP.\n") 
         inactive(2)
     
-    teamHP = aHP + bHP + cHP + dHP
 
-    
-    print("\nBoss HP: ",bossHP,"\n")
-    print(aName,": ",aHP, "HP, ",aMP, "MP")
-    print(bName,": ",bHP, "HP, ",bMP, "MP,")
-    print(cName,": ",cHP, "HP, ",cMP, "MP,")
-    print(dName,": ",dHP, "HP, ",dMP, "MP.\n")
     
     if cHP > 0:
         active(3)
@@ -854,17 +871,23 @@ while bossHP > 0 or teamHP > 0:
             healer(a)
         elif cTitle == 4:
             wizard(a)
+        if aHP<0:
+            aHP = 0
+        if bHP<0:
+            bHP = 0
+        if cHP<0:
+            cHP = 0
+        if dHP<0:
+            dHP = 0
+        teamHP = aHP + bHP + cHP + dHP
+        print("\nBoss HP: ",bossHP,"\n")
+        print(aName,": ",aHP, "HP, ",aMP, "MP")
+        print(bName,": ",bHP, "HP, ",bMP, "MP,")
+        print(cName,": ",cHP, "HP, ",cMP, "MP,")
+        print(dName,": ",dHP, "HP, ",dMP, "MP.\n")
         inactive(3)
     
-    teamHP = aHP + bHP + cHP + dHP
 
-    
-    print("\nBoss HP: ",bossHP,"\n")
-    print(aName,": ",aHP, "HP, ",aMP, "MP")
-    print(bName,": ",bHP, "HP, ",bMP, "MP,")
-    print(cName,": ",cHP, "HP, ",cMP, "MP,")
-    print(dName,": ",dHP, "HP, ",dMP, "MP.\n")
-    
     if dHP > 0:
         active(4)
         print(dName,"'s turn!\n")
@@ -893,15 +916,24 @@ while bossHP > 0 or teamHP > 0:
             healer(a)
         elif dTitle == 4:
             wizard(a)
+        if aHP<0:
+            aHP = 0
+        if bHP<0:
+            bHP = 0
+        if cHP<0:
+            cHP = 0
+        if dHP<0:
+            dHP = 0
+        teamHP = aHP + bHP + cHP + dHP
+        print("\nBoss HP: ",bossHP,"\n")
+        print(aName,": ",aHP, "HP, ",aMP, "MP")
+        print(bName,": ",bHP, "HP, ",bMP, "MP,")
+        print(cName,": ",cHP, "HP, ",cMP, "MP,")
+        print(dName,": ",dHP, "HP, ",dMP, "MP.\n")
         inactive(4)
 
-    teamHP = aHP + bHP + cHP + dHP
 
-    print("\nBoss HP: ",bossHP,"\n")
-    print(aName,": ",aHP, "HP, ",aMP, "MP")
-    print(bName,": ",bHP, "HP, ",bMP, "MP,")
-    print(cName,": ",cHP, "HP, ",cMP, "MP,")
-    print(dName,": ",dHP, "HP, ",dMP, "MP.\n")
+
     print("******")
     esuna = 2
     if enemySleep == 1:
@@ -922,11 +954,26 @@ while bossHP > 0 or teamHP > 0:
 
     
     boss(z)
+
     print("******")    
-    
+    if aHP<0:
+        aHP = 0
+    if bHP<0:
+        bHP = 0
+    if cHP<0:
+        cHP = 0
+    if dHP<0:
+        dHP = 0
     teamHP = aHP + bHP + cHP + dHP
+    print("\nBoss HP: ",bossHP,"\n")
+    print(aName,": ",aHP, "HP, ",aMP, "MP")
+    print(bName,": ",bHP, "HP, ",bMP, "MP,")
+    print(cName,": ",cHP, "HP, ",cMP, "MP,")
+    print(dName,": ",dHP, "HP, ",dMP, "MP.\n")
 
 if teamHP <= 0:
     print("Game over. You Lose.")
 elif bossHP <= 0:
     print("Game over. You Win!")
+    
+exit = int(input("Press any key to close the window."))
